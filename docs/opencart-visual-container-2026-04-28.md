@@ -33,9 +33,27 @@ Implemented in the isolated visual copy:
 - Green horizontal category menu based on ERP website departments.
 - Old 1920x500 slider assets as the hero surface.
 - OpenCart Luxury theme fonts copied from the old server theme.
-- OpenCart-like color tokens: dark purple, muted green, gold, silver.
+- OpenCart theme color tokens from the live settings: `#333024`, `#F1F5F5`, `#91BB94`, `#7A9D7C`, `#4EAE33`, `#ADA479`, `#C1C3CC`.
 - Product cards restyled toward the old theme with square white product image areas, uppercase titles, gold category tags, and flatter buttons.
 - Footer restyled to the old dark theme direction.
+- Old favicon copied into the visual container.
+
+## Legacy URL Compatibility
+
+The visual container now includes a static OpenCart SEO alias export generated from the live OpenCart database:
+
+- categories from `oc_url_alias` + `oc_category_description`
+- products from `oc_url_alias` + `oc_product` / `oc_product_description`
+- information pages from `oc_url_alias` + `oc_information_description`
+
+Runtime behavior:
+
+- product aliases resolve client-side to `/products/<sku>` when the OpenCart SKU/model can be mapped
+- category aliases resolve to an exact ERP item group when possible
+- category aliases without an exact ERP group fall back to `/catalog` instead of rendering an empty page
+- information aliases fall back to the service/catalog surface
+
+The alias bundle is lazy-loaded only for unknown legacy paths, so normal `/catalog`, `/products/*`, and `/account` visits do not load it.
 
 ## Runtime Fix
 
@@ -55,10 +73,11 @@ Passed:
 - ERPNext validation
 - Full smoke test with `SMOKE_BASE_URL=http://web`
 - Visual smoke through SSH tunnel to `localhost:18081`
+- `/favicon.ico`
+- legacy path shell checks, including `/bar-supplies` and `/reception-storage-unit-custom-design`
 
 Known state:
 
 - This is a first visual pass, not final pixel parity.
-- Legacy URL alias support is not implemented yet.
-- Category counts may populate after live facet data returns.
+- Legacy URL alias support is initial and static; it should be regenerated after OpenCart catalog changes until the old site is retired.
 - More work is needed on category/product detail pages, checkout/quote surfaces, mobile menu parity, and exact OpenCart spacing.
