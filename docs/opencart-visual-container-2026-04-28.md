@@ -52,7 +52,8 @@ Implemented in the isolated visual copy:
 - Product detail page restyled toward the old theme: breadcrumb strip, contained product image, square spec table, and light-green quote panel.
 - Customer account page restyled toward the old theme: square panels, smaller OpenCart-like headings, flatter login state, and table-like summary blocks.
 - Zero-count category badges are hidden in the visual port so loading or unmapped ERP departments do not look like empty OpenCart categories.
-- Footer restyled to the old dark theme direction.
+- Footer rebuilt closer to the OpenCart Luxury theme: centered logo, four link columns, warranty/delivery/discount/support row, darker contact band, embedded Green Leaf map, and dark bottom strip.
+- Mobile catalog menu restyled toward the old OpenCart slide-out category panel with a narrow fixed drawer and flat department rows.
 - Old favicon copied into the visual container.
 
 ## Legacy URL Compatibility
@@ -97,6 +98,7 @@ Passed:
 - `https://testing.greenleafpacific.com/health`
 - HTTP to HTTPS redirect for `http://testing.greenleafpacific.com/`
 - browser visual smoke against `https://testing.greenleafpacific.com`
+- browser visual smoke after the footer/mobile-menu pass: catalog and account at 390px and 1440px, no horizontal overflow
 
 Known state:
 
