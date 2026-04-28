@@ -16,3 +16,4 @@ Keep technical notes, migration decisions, audit results, and implementation pla
 ## Docs
 
 - [Server audit, 2026-04-28](docs/server-audit-2026-04-28.md)
+- [OpenCart visual container, 2026-04-28](docs/opencart-visual-container-2026-04-28.md)
