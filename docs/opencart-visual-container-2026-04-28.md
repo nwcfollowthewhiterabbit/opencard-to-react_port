@@ -46,6 +46,7 @@ Implemented in the isolated visual copy:
 - Cart/quote button styled closer to the old OpenCart theme.
 - Green horizontal category menu based on ERP website departments.
 - Old 1920x500 slider assets as the hero surface.
+- Home-only OpenCart-style promo layer added after the hero: four image promo tiles and a flat category grid before the catalog section.
 - OpenCart Luxury theme fonts copied from the old server theme.
 - OpenCart theme color tokens from the live settings: `#333024`, `#F1F5F5`, `#91BB94`, `#7A9D7C`, `#4EAE33`, `#ADA479`, `#C1C3CC`.
 - Product cards restyled toward the old theme with square white product image areas, uppercase titles, gold category tags, and flatter buttons.
@@ -99,6 +100,7 @@ Passed:
 - HTTP to HTTPS redirect for `http://testing.greenleafpacific.com/`
 - browser visual smoke against `https://testing.greenleafpacific.com`
 - browser visual smoke after the footer/mobile-menu pass: catalog and account at 390px and 1440px, no horizontal overflow
+- browser visual smoke after the home promo/category pass: catalog and account at 390px and 1440px, no horizontal overflow
 
 Known state:
 
