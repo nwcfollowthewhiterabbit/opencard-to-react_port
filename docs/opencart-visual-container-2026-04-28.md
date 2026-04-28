@@ -19,6 +19,11 @@ OpenCart visual port:
 - Compose project: `gl-opencart-visual`
 - Path: `/opt/greenleaf/site-opencart-visual`
 - Public test URL: `http://139.99.171.55:18081`
+- HTTPS testing URL: `https://testing.greenleafpacific.com/`
+- System nginx vhost: `/etc/nginx/sites-available/testing.greenleafpacific.com.conf`
+- Let's Encrypt certificate: `/etc/letsencrypt/live/testing.greenleafpacific.com/fullchain.pem`
+- Let's Encrypt key: `/etc/letsencrypt/live/testing.greenleafpacific.com/privkey.pem`
+- Certificate expiry: `2026-07-27`
 - Mistyped helper URL: `http://139.99.171.55/18081/` redirects to `http://139.99.171.55:18081/`
 - API health: `http://139.99.171.55:18081/health`
 - ERPNext network: `erp-greenleafpacific-local_default`
@@ -27,6 +32,8 @@ Important access note:
 
 - `greenleafpacific.com` currently resolves to `139.99.155.118`, not the visual-port server `139.99.171.55`.
 - Use `http://139.99.171.55:18081/` for visual QA until DNS or a proper reverse-proxy hostname is assigned.
+- `testing.greenleafpacific.com` is now proxied by system nginx to `127.0.0.1:18081` and redirects HTTP to HTTPS.
+- DNS for `greenleafpacific.com` currently has mixed authoritative nameservers: DomainControl returns `testing.greenleafpacific.com -> 139.99.171.55`, while Turbify returns `testing.greenleafpacific.com -> CNAME cpanel101.turbify.biz`. Let’s Encrypt succeeded, but the nameserver split should be cleaned up to avoid intermittent client/DNS behavior.
 - `http://139.99.171.55/18081` was reproduced as the plain `404 Not Found` shown by stakeholders; it is a path on port 80, not port 18081. A static redirect page was added under `/var/www/html/18081/index.html` to reduce this confusion.
 
 ## First Visual Pass
@@ -86,6 +93,10 @@ Passed:
 - `/favicon.ico`
 - legacy path shell checks, including `/bar-supplies` and `/reception-storage-unit-custom-design`
 - existing React storefront on `http://139.99.171.55:18080` remained running separately
+- `https://testing.greenleafpacific.com/`
+- `https://testing.greenleafpacific.com/health`
+- HTTP to HTTPS redirect for `http://testing.greenleafpacific.com/`
+- browser visual smoke against `https://testing.greenleafpacific.com`
 
 Known state:
 
