@@ -19,8 +19,15 @@ OpenCart visual port:
 - Compose project: `gl-opencart-visual`
 - Path: `/opt/greenleaf/site-opencart-visual`
 - Public test URL: `http://139.99.171.55:18081`
+- Mistyped helper URL: `http://139.99.171.55/18081/` redirects to `http://139.99.171.55:18081/`
 - API health: `http://139.99.171.55:18081/health`
 - ERPNext network: `erp-greenleafpacific-local_default`
+
+Important access note:
+
+- `greenleafpacific.com` currently resolves to `139.99.155.118`, not the visual-port server `139.99.171.55`.
+- Use `http://139.99.171.55:18081/` for visual QA until DNS or a proper reverse-proxy hostname is assigned.
+- `http://139.99.171.55/18081` was reproduced as the plain `404 Not Found` shown by stakeholders; it is a path on port 80, not port 18081. A static redirect page was added under `/var/www/html/18081/index.html` to reduce this confusion.
 
 ## First Visual Pass
 
