@@ -1,0 +1,33 @@
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local-only working material
+_archive/
+tmp/
+temp/
+*.log
+
+# Reference checkouts and generated visual artifacts
+GL-website/
+greenleafpacific.com/
+.screenshots/
+screenshots/
+playwright-report/
+test-results/
+
+# Node/build output, if docs tooling is added later
+node_modules/
+dist/
+build/
+coverage/
