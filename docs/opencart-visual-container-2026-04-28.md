@@ -50,6 +50,7 @@ Implemented in the isolated visual copy:
 - OpenCart Luxury theme fonts copied from the old server theme.
 - OpenCart theme color tokens from the live settings: `#333024`, `#F1F5F5`, `#91BB94`, `#7A9D7C`, `#4EAE33`, `#ADA479`, `#C1C3CC`.
 - Product cards restyled toward the old theme with square white product image areas, uppercase titles, gold category tags, and flatter buttons.
+- Catalog listing pass tightened product cards and toolbar toward OpenCart: compact filter row, shorter descriptions, flat pagination, lighter badges, and quote/view actions instead of ERP-heavy button text.
 - Product detail page restyled toward the old theme: breadcrumb strip, contained product image, square spec table, and light-green quote panel.
 - Customer account page restyled toward the old theme: square panels, smaller OpenCart-like headings, flatter login state, and table-like summary blocks.
 - Zero-count category badges are hidden in the visual port so loading or unmapped ERP departments do not look like empty OpenCart categories.
@@ -101,6 +102,7 @@ Passed:
 - browser visual smoke against `https://testing.greenleafpacific.com`
 - browser visual smoke after the footer/mobile-menu pass: catalog and account at 390px and 1440px, no horizontal overflow
 - browser visual smoke after the home promo/category pass: catalog and account at 390px and 1440px, no horizontal overflow
+- browser visual smoke after the catalog card/toolbar pass: catalog and account at 390px and 1440px, no horizontal overflow
 
 Known state:
 
